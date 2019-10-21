@@ -12,12 +12,14 @@ cache:
     - $HOME/.ivy2
     - $HOME/.sbt
 deploy:
-  api_key: $GITHUB_AUTH
+  provider: releases
+  api_key:
+    secure: QZG6sykyN5HdBvh2A1KWv7Vp95Su6wF7vfAa2EDNAiLFxHxjbjVRzn7vErsQ+gwSzCMH87LSYI7hhYjZyivIoMPKQ8hhDbj0FNn7sQIUv8SmScQZLtlWtjOfJv/phtziZi37tqORDCUPa/0YyBF1dOoVRxAeW/unIg5SsNqGHKdzJg9jJD97nXm8KRO/5hV1ex1ur6IPZM9AuyXvIJJ73gVCt/z2CwmsiKa7gANSY5fIAyucx9ZQ65gjE5qphMpqb9Nr41/DPP6FYKuHm9javP1lE7ruA2Noe1yHsdOGN488zCyOX1nqa5VMnhMdnBGbgJziVyUSISGlExjV+v7TFnYhr0ljPrNZAMo8z8uYucig17yaMT80I5/b+NC41ZlRIpbLSKVnxkyRL6GXdSRnNSBsdBegzNwSP8wAvE081Ydg1dArzBIfgp6KmD2fjQIC9qWENELtNnZQnQZ2kOKlBxL8dnO/3PsTLPRFf54unixGKjhAGNrXmiG1qZs9AntgRweoyiMSUGh+YrbPCIxrVZ2tgNJiMPdVy2SymXKprkLOdgyvbedmRtd9KROf7xGtiTj9VNOECqxDxrGdxH7qvEzJbldqqp45XvLmkHE6eKO7bsZDtgrQfgrk1m+kRVhca6CZIPOo9HItJgfawHSWKe7T8fnGOHwIuZo8E/lSfqU=
   file: '*/target/**/*.jar'
   file_glob: true
   on:
     tags: true
-  provider: releases
+    repo: lucidsoftware/opentracing-jdbc
   skip_cleanup: true
 git:
   depth: 1
