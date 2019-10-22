@@ -4,7 +4,7 @@ import com.p6spy.engine.common.ConnectionInformation;
 import com.p6spy.engine.event.JdbcEventListener;
 import com.p6spy.engine.wrapper.ConnectionWrapper;
 import io.opentracing.Tracer;
-import io.opentracing.contrib.global.GlobalTracer;
+import io.opentracing.util.GlobalTracer;
 import io.opentracing.threadcontext.ContextSpan;
 import java.sql.Connection;
 
