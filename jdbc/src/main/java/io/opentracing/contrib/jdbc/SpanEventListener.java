@@ -25,28 +25,34 @@ public class SpanEventListener extends JdbcEventListener {
         this.peer = peer;
     }
 
-    public void onAfterExecute(StatementInformation statementInformation, long timeElapsedNanos, SQLException e) {
+    @Override
+    public void onAfterExecute(StatementInformation statementInformation, long timeElapsedNanos, String sql, SQLException e) {
         onAfterExecute("execute", statementInformation, timeElapsedNanos, e);
     }
 
-    public void onAfterExecute(PreparedStatementInformation statementInformation, long timeElaspedNanos, SQLException e) {
-        onAfterExecute("execute", statementInformation, timeElaspedNanos, e);
+    @Override
+    public void onAfterExecute(PreparedStatementInformation statementInformation, long timeElapsedNanos, SQLException e) {
+        onAfterExecute("execute", statementInformation, timeElapsedNanos, e);
     }
 
-    public void onAfterExecuteUpdate(StatementInformation statementInformation, long timeElapsedNanos, SQLException e) {
+    @Override
+    public void onAfterExecuteUpdate(StatementInformation statementInformation, long timeElapsedNanos, String sql, int rowCount, SQLException e) {
         onAfterExecute("update", statementInformation, timeElapsedNanos, e);
     }
 
-    public void onAfterExecuteUpdate(PreparedStatementInformation statementInformation, long timeElaspedNanos, SQLException e) {
-        onAfterExecute("update", statementInformation, timeElaspedNanos, e);
+    @Override
+    public void onAfterExecuteUpdate(PreparedStatementInformation statementInformation, long timeElapsedNanos, int rowCount, SQLException e) {
+        onAfterExecute("update", statementInformation, timeElapsedNanos, e);
     }
 
-    public void onAfterExecuteQuery(StatementInformation statementInformation, long timeElapsedNanos, SQLException e) {
+    @Override
+    public void onAfterExecuteQuery(StatementInformation statementInformation, long timeElapsedNanos, String sql, SQLException e) {
         onAfterExecute("query", statementInformation, timeElapsedNanos, e);
     }
 
-    public void onAfterExecuteQuery(PreparedStatementInformation statementInformation, long timeElaspedNanos, SQLException e) {
-        onAfterExecute("query", statementInformation, timeElaspedNanos, e);
+    @Override
+    public void onAfterExecuteQuery(PreparedStatementInformation statementInformation, long timeElapsedNanos, SQLException e) {
+        onAfterExecute("query", statementInformation, timeElapsedNanos, e);
     }
 
     private void onAfterExecute(String type, StatementInformation statementInformation, long timeElapsedNanos, SQLException e) {
